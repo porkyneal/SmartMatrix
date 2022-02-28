@@ -32,8 +32,11 @@
 #include "esp_heap_caps.h"
 #include "esp32_i2s_parallel.h"
 #include "soc/gpio_periph.h"
-#include "hal/gpio_types.h"
 #include "esp32-hal.h"
+
+#if __has_include("hal/gpio_types.h")
+#include "hal/gpio_types.h"
+#endif
 
 typedef struct {
     volatile lldesc_t *dmadesc_a, *dmadesc_b;
