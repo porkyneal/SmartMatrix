@@ -305,6 +305,9 @@ void SmartMatrixHub75Calc_NT<dummyvar>::begin(uint32_t dmaRamToKeepFreeBytes)
     printf("SmartMatrix Layers Allocated from Heap:\r\n");
     show_esp32_heap_mem();
 
+    printf("SmartMatrix on core: %d\r\n", calcTaskCore);
+
+
 #if defined(ESP32)
     // malloc temporary buffers needed for loadMatrixBuffers
     int numPixelsPerTempRow = pixels_per_latch/physical_rows_per_refresh_row;
